@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/black.css" />
+    <link rel="stylesheet" href="css/theme/white.css" />
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/monokai.css" />
@@ -30,21 +30,38 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- @ -->
-
         <section>
-          <h1>{{ Portada }}</h1>
-        </section>
-
-        <!-- @ -->
-
-        <section>
-          <h1>{{ SOBRE MI }}</h1>
+          <h2>{{}}}}</h2>
         </section>
 
         <section>
-          <h3>Abrimos Chrome</h3>
-          <pre><code data-trim data-noescape>const browser = await puppeteer.launch();
+          <h2>{{}}}}</h2>
+        </section>
+
+        <section>
+          <h2>Introducción</h2>
+          <h4>Esos malditos banners</h4>
+        </section>
+
+        <section>
+          <section>
+            <img
+              style="background: none; box-shadow: none; border: none; "
+              src="./resources/logo.png"
+              alt="Logo"
+            />
+            <h2>¿Que es?</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>¿Como funciona?</h2>
+          </section>
+
+          <section>
+            <h3>"Abrimos" el navegador</h3>
+            <pre><code data-trim data-noescape>const browser = await puppeteer.launch();
 
 // Y una nueva ventana, claro
 
@@ -56,11 +73,11 @@ await page.setViewport({
   width: 750,
   height: 500
 });</code></pre>
-        </section>
+          </section>
 
-        <section>
-          <h3>Cargamos una web</h3>
-          <pre><code data-trim data-noescape>await page.goto('https://www.google.com', {
+          <section>
+            <h3>Cargamos una web</h3>
+            <pre><code data-trim data-noescape>await page.goto('https://www.google.com', {
   waitUntil: 'networkidle0'
 });
 
@@ -68,12 +85,12 @@ await page.setViewport({
 // domcontentloaded -> Hasta el evento DOMContentLoaded
 // networkidle0 -> No hay conexiones activas durante 500ms
 // networkidle2 -> Hay 2 o menos conexiones durante 500ms</code></pre>
-        </section>
+          </section>
 
-        <section>
-          <h3>Una vez allí...</h3>
-          <pre><code data-trim data-noescape>// Podemos escribir
-
+          <section>
+            <h3>Una vez allí...</h3>
+            <pre><code data-trim data-noescape>// Podemos escribir
+    
 await page.type('#input', 'ey!');
 
 // Hacer click en elementos
@@ -85,42 +102,53 @@ await page.click('#submit');
 await page.addStyleTag({ content: 'h1 { color: red; }' });
 
 // Etc...</code></pre>
-        </section>
+          </section>
 
-        <section>
-          <h3>Y tal vez lo más interesante</h3>
-          <pre><code data-trim data-noescape>// Podemos hacer una captura de pantalla
-
+          <section>
+            <h3>Y tal vez lo más interesante</h3>
+            <pre><code data-trim data-noescape>// Podemos hacer una captura de pantalla
+    
 const screenshot = await page.screenshot({ fullPage: true });
 
 // ¡O incluso exportarlo a PDF!
 // Es un navegador web, al fin y al cabo
 
 const pdf = await page.pdf({ format: 'A4' });</code></pre>
-        </section>
+          </section>
 
-        <section>
-          <h3>Terminamos de navegar</h3>
-          <pre><code data-trim data-noescape>// Cerramos la página
-
+          <section>
+            <h3>Terminamos de navegar</h3>
+            <pre><code data-trim data-noescape>// Cerramos la página
+    
 await page.close();
 
 // Y el navegador, si no vamos a usarlo mas
 
 await browser.close();</code></pre>
+          </section>
+
+          <section>
+            <img src="./resources/ram.gif" alt="GIF" />
+          </section>
         </section>
 
         <section>
-          <img src="./resources/ram.gif" alt="GIF" />
+          <h2>Vamos a ver unos ejemplos</h2>
+          <em>Meme as a Service</em>
         </section>
 
-        <!-- @ -->
-
-        <section data-markdown>
-          <textarea data-template> </textarea>
+        <section>
+          <h3>Hay infinidad de posibles usos</h3>
+          <em></em>
+          <h4>(Seguro que se te ha ocurrido alguno)</h4>
         </section>
 
-        <!-- @ -->
+        <section>
+          <h2>¿Alguna pregunta?</h2>
+          <em style=" text-decoration: line-through; "
+            >(No, yo tampoco me he leido la documentación entera)</em
+          >
+        </section>
       </div>
     </div>
 
