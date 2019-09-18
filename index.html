@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>AlmeríaJS - Introducción a Puppeteer</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? 'css/print/pdf.css'
+        : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- @ -->
+
+        <section>
+          <h1>{{ Portada }}</h1>
+        </section>
+
+        <!-- @ -->
+
+        <section>
+          <h1>{{ SOBRE MI }}</h1>
+        </section>
+
+        <section>
+          <h3>Abrimos Chrome</h3>
+          <pre><code data-trim data-noescape>const browser = await puppeteer.launch();
+
+// Y una nueva ventana, claro
+
+const page = await browser.newPage();
+
+// Podemos redimensionar la página al tamaño que prefiramos
+
+await page.setViewport({
+  width: 750,
+  height: 500
+});</code></pre>
+        </section>
+
+        <section>
+          <h3>Cargamos una web</h3>
+          <pre><code data-trim data-noescape>await page.goto('https://www.google.com', {
+  waitUntil: 'networkidle0'
+});
+
+// load -> Hasta el evento load
+// domcontentloaded -> Hasta el evento DOMContentLoaded
+// networkidle0 -> No hay conexiones activas durante 500ms
+// networkidle2 -> Hay 2 o menos conexiones durante 500ms</code></pre>
+        </section>
+
+        <section>
+          <h3>Una vez allí...</h3>
+          <pre><code data-trim data-noescape>// Podemos escribir
+
+await page.type('#input', 'ey!');
+
+// Hacer click en elementos
+
+await page.click('#submit');
+
+// O añadir un estilo
+
+await page.addStyleTag({ content: 'h1 { color: red; }' });
+
+// Etc...</code></pre>
+        </section>
+
+        <section>
+          <h3>Y tal vez lo más interesante</h3>
+          <pre><code data-trim data-noescape>// Podemos hacer una captura de pantalla
+
+const screenshot = await page.screenshot({ fullPage: true });
+
+// ¡O incluso exportarlo a PDF!
+// Es un navegador web, al fin y al cabo
+
+const pdf = await page.pdf({ format: 'A4' });</code></pre>
+        </section>
+
+        <section>
+          <h3>Terminamos de navegar</h3>
+          <pre><code data-trim data-noescape>// Cerramos la página
+
+await page.close();
+
+// Y el navegador, si no vamos a usarlo mas
+
+await browser.close();</code></pre>
+        </section>
+
+        <section>
+          <img src="./resources/ram.gif" alt="GIF" />
+        </section>
+
+        <!-- @ -->
+
+        <section data-markdown>
+          <textarea data-template> </textarea>
+        </section>
+
+        <!-- @ -->
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
