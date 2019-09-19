@@ -24,33 +24,62 @@
   <body>
     <div class="reveal">
       <div class="slides">
-
         <section>
-          <h2>{{ portada to' wapa tio }}</h2>
+          <h1></h1>
         </section>
 
         <section>
-            <h2>{{ about gocastilla }}</h2>
-          </section>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img src="" alt="Avatar" />
+            </div>
+            <div style=" text-align: left; ">
+              <h3>¡Hola!</h3>
+              <p>
+                Soy <strong>Alberto Gómez</strong> y me dedico a programar cosas
+                divertidas que otra gente mucho mas sensata echa para atrás.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section>
-          <h2>Introducción</h2>
-          <h5>Esos malditos banners</h5>
+          <section>
+            <h2>Introducción</h2>
+            <em>"Esos malditos banners"</em>
+          </section>
+
+          <section>
+            <img
+              src="resources/gocastilla_this_is_fine.png"
+              alt="This is fine"
+            />
+          </section>
         </section>
 
         <section>
           <section>
             <img
               style="background: none; box-shadow: none; border: none; "
-              src="./resources/logo.png"
+              src="resources/logo.png"
               alt="Puppeteer"
             />
           </section>
-          
+
           <section>
             <h2>¿Que es esto?</h2>
-            <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-              &ldquo;Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full (non-headless) Chrome or Chromium.&rdquo;
+            <blockquote cite="https://github.com/GoogleChrome/puppeteer">
+              &ldquo;Puppeteer is a Node library which provides a high-level API
+              to control Chrome or Chromium over the DevTools Protocol.
+              Puppeteer runs headless by default, but can be configured to run
+              full (non-headless) Chrome or Chromium.&rdquo;
             </blockquote>
           </section>
 
@@ -61,11 +90,11 @@
 
         <section>
           <section>
-            <h2>¿Como funciona?</h2>
+            <h2>Trabajando con Puppeteer</h2>
           </section>
 
           <section>
-            <h3>Abrimos el navegador</h3>
+            <h4>Abrimos el navegador</h4>
             <pre><code data-trim data-noescape>const browser = await puppeteer.launch();
 
 // Y una nueva ventana, claro
@@ -81,7 +110,7 @@ await page.setViewport({
           </section>
 
           <section>
-            <h3>Cargamos la web</h3>
+            <h4>Cargamos la web</h4>
             <pre><code data-trim data-noescape>await page.goto('https://www.google.com', {
   waitUntil: 'networkidle0'
 });
@@ -93,7 +122,7 @@ await page.setViewport({
           </section>
 
           <section>
-            <h3>Interactuamos</h3>
+            <h4>Interactuamos con el sitio</h4>
             <pre><code data-trim data-noescape>// Podemos escribir
     
 await page.type('#input', 'ey!');
@@ -110,7 +139,7 @@ await page.addStyleTag({ content: 'h1 { color: red; }' });
           </section>
 
           <section>
-            <h3>Y tal vez lo más interesante</h3>
+            <h4>Y tal vez lo más interesante</h4>
             <pre><code data-trim data-noescape>// Podemos hacer una captura de pantalla
     
 const screenshot = await page.screenshot({ fullPage: true });
@@ -138,37 +167,44 @@ await browser.close();</code></pre>
         </section>
 
         <section>
-          <section>
-            <h2>Vamos a ver unos ejemplos</h2>
-          </section>
-          <section>
-            <em>Meme as a Service</em>
-          </section>
-          <section>
-            <em>Generador de imágenes promocionales de AlmeríaJS</em>
-          </section>
+          <h2>Vamos a ver unos ejemplos</h2>
+          <ul>
+            <li><em>Meme as a Service</em></li>
+            <li><em>Generador de imágenes promocionales de AlmeríaJS</em></li>
+          </ul>
         </section>
 
         <section>
-          <h2>En conclusión</h2>
+          <section>
+            <h2>Y aquí estamos</h2>
+            <em>Mis conclusiones tras trabajar con Puppeteer</em>
+          </section>
+
+          <section>
+            <img src="./resources/spongebob01.png" alt="Spongebob" />
+          </section>
+
+          <section>
+            <img src="./resources/spongesad.gif" alt="Spongebob Sad" />
+          </section>
+
+          <section>
+            <img src="./resources/work.jpg" alt="Honest work" />
+          </section>
         </section>
 
         <section>
           <h2>¿Alguna pregunta?</h2>
           <em style=" text-decoration: line-through; "
-            >(No, yo tampoco me he leido la documentación entera)</em
+            >No, yo tampoco me he leido la documentación entera</em
           >
         </section>
-
       </div>
     </div>
 
     <script src="js/reveal.js"></script>
 
     <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
