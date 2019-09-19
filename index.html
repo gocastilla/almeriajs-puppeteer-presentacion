@@ -6,17 +6,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-
     <title>AlmeríaJS - Introducción a Puppeteer</title>
-
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/reveal.css" />
     <link rel="stylesheet" href="css/theme/white.css" />
-
-    <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/monokai.css" />
-
-    <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement('link');
       link.rel = 'stylesheet';
@@ -24,23 +18,24 @@
       link.href = window.location.search.match(/print-pdf/gi)
         ? 'css/print/pdf.css'
         : 'css/print/paper.css';
-      document.getElementsByTagName('head')[0].appendChild(link);
+      document.getElementsByTagName('head')[0].appeandChild(link);
     </script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
         <section>
-          <h2>{{}}}}</h2>
+          <h2>{{ portada to' wapa tio }}</h2>
         </section>
 
         <section>
-          <h2>{{}}}}</h2>
-        </section>
+            <h2>{{ about gocastilla }}</h2>
+          </section>
 
         <section>
           <h2>Introducción</h2>
-          <h4>Esos malditos banners</h4>
+          <h5>Esos malditos banners</h5>
         </section>
 
         <section>
@@ -48,9 +43,19 @@
             <img
               style="background: none; box-shadow: none; border: none; "
               src="./resources/logo.png"
-              alt="Logo"
+              alt="Puppeteer"
             />
-            <h2>¿Que es?</h2>
+          </section>
+          
+          <section>
+            <h2>¿Que es esto?</h2>
+            <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+              &ldquo;Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full (non-headless) Chrome or Chromium.&rdquo;
+            </blockquote>
+          </section>
+
+          <section>
+            <h1>¿Y con esto que hago?</h1>
           </section>
         </section>
 
@@ -60,7 +65,7 @@
           </section>
 
           <section>
-            <h3>"Abrimos" el navegador</h3>
+            <h3>Abrimos el navegador</h3>
             <pre><code data-trim data-noescape>const browser = await puppeteer.launch();
 
 // Y una nueva ventana, claro
@@ -76,7 +81,7 @@ await page.setViewport({
           </section>
 
           <section>
-            <h3>Cargamos una web</h3>
+            <h3>Cargamos la web</h3>
             <pre><code data-trim data-noescape>await page.goto('https://www.google.com', {
   waitUntil: 'networkidle0'
 });
@@ -88,7 +93,7 @@ await page.setViewport({
           </section>
 
           <section>
-            <h3>Una vez allí...</h3>
+            <h3>Interactuamos</h3>
             <pre><code data-trim data-noescape>// Podemos escribir
     
 await page.type('#input', 'ey!');
@@ -117,7 +122,7 @@ const pdf = await page.pdf({ format: 'A4' });</code></pre>
           </section>
 
           <section>
-            <h3>Terminamos de navegar</h3>
+            <h3>Hemos terminado</h3>
             <pre><code data-trim data-noescape>// Cerramos la página
     
 await page.close();
@@ -133,14 +138,19 @@ await browser.close();</code></pre>
         </section>
 
         <section>
-          <h2>Vamos a ver unos ejemplos</h2>
-          <em>Meme as a Service</em>
+          <section>
+            <h2>Vamos a ver unos ejemplos</h2>
+          </section>
+          <section>
+            <em>Meme as a Service</em>
+          </section>
+          <section>
+            <em>Generador de imágenes promocionales de AlmeríaJS</em>
+          </section>
         </section>
 
         <section>
-          <h3>Hay infinidad de posibles usos</h3>
-          <em></em>
-          <h4>(Seguro que se te ha ocurrido alguno)</h4>
+          <h2>En conclusión</h2>
         </section>
 
         <section>
@@ -149,6 +159,7 @@ await browser.close();</code></pre>
             >(No, yo tampoco me he leido la documentación entera)</em
           >
         </section>
+
       </div>
     </div>
 
