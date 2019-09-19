@@ -49,25 +49,71 @@
         <section>
           <div
             style="
+              width: 800px;
+              margin: 0 auto;
               display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: center;
             "
           >
-            <div>
+            <div
+              style="
+                width: 300px;
+                padding-right: 30px;
+              "
+            >
               <img
-                style="background: none; box-shadow: none; border: none; "
-                src=""
+                style="
+                  display: block;
+                  width: 100%;
+                  background: none;
+                  box-shadow: none;
+                  border: none; 
+                "
+                src="resources/avatar.png"
                 alt="Avatar"
               />
             </div>
-            <div style=" text-align: left; ">
+            <div
+              style="
+                text-align: left;
+              "
+            >
               <h3>¡Hola!</h3>
-              <p>
-                Soy <strong>Alberto Gómez</strong> y me dedico a programar cosas
-                divertidas que otra gente mucho mas sensata echa para atrás.
+              <p style=" font-size: 30px; ">
+                Soy <strong>Alberto Gómez</strong> y me dedico al
+                <strong
+                  style="
+                    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+                text-align: center;
+                background-size: 100% 100%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"
+                  >mágico</strong
+                >
+                mundo del Front-end.
               </p>
+              <p style=" font-size: 30px; ">
+                Seré vuestro guía en esta aventura.
+              </p>
+              <div style=" font-size: 25px; margin-top: 30px; ">
+                <div style=" color: #17dd97; ">
+                  <i
+                    class="fab fa-internet-explorer"
+                    style=" font-size: 25px; "
+                  ></i>
+                  albertogomez.dev
+                </div>
+                <div style=" color: #000000; ">
+                  <i class="fab fa-github" style=" font-size: 25px; "></i>
+                  gocastilla
+                </div>
+                <div style=" color: rgb(29, 161, 242); ">
+                  <i class="fab fa-twitter" style=" font-size: 25px; "></i>
+                  gocastilla
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -76,6 +122,24 @@
           <section>
             <h2>Introducción</h2>
             <em>"Esos malditos banners"</em>
+            <br /><br />
+            <img
+              src="resources/4mMy4U3.png"
+              alt="Banner"
+              style="
+                width: 400px;
+                display: block;
+                margin: 0 auto;
+                background: none;
+                box-shadow: none;
+                border: none;
+                box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
+              "
+            />
+          </section>
+
+          <section>
+            <img src="resources/banners-again.png" alt="Banners again" />
           </section>
 
           <section>
@@ -89,14 +153,17 @@
         <section>
           <section>
             <img
-              style="background: none; box-shadow: none; border: none; "
+              style="
+                background: none;
+                box-shadow: none;
+                border: none;
+              "
               src="resources/logo.png"
               alt="Puppeteer"
             />
           </section>
 
           <section>
-            <h2>¿Que es esto?</h2>
             <blockquote cite="https://github.com/GoogleChrome/puppeteer">
               &ldquo;Puppeteer is a Node library which provides a high-level API
               to control Chrome or Chromium over the DevTools Protocol.
@@ -106,13 +173,25 @@
           </section>
 
           <section>
-            <h1>¿Y con esto que hago?</h1>
+            <h3>En definitivas cuentas, podemos:</h3>
+            <ul style="font-size: 30px;">
+              <li>
+                Renderizar contenido HTML + CSS + Javascript en NodeJS
+              </li>
+              <li>
+                Exportar ese contenido ya renderizado a imagen (PNG o JPG) o
+                PDF.
+              </li>
+              <li>
+                O también realizar pruebas de vuestros plugins para Chrome
+              </li>
+            </ul>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>Trabajando con Puppeteer</h2>
+            <h2>El código</h2>
           </section>
 
           <section>
@@ -144,7 +223,7 @@ await page.setViewport({
           </section>
 
           <section>
-            <h4>Interactuamos con el sitio</h4>
+            <h4>Interactuamos con ella</h4>
             <pre><code data-trim data-noescape>// Podemos escribir
     
 await page.type('#input', 'ey!');
@@ -161,7 +240,7 @@ await page.addStyleTag({ content: 'h1 { color: red; }' });
           </section>
 
           <section>
-            <h4>Y tal vez lo más interesante</h4>
+            <h4>Y lo que nos ha traído hasta aquí</h4>
             <pre><code data-trim data-noescape>// Podemos hacer una captura de pantalla
     
 const screenshot = await page.screenshot({ fullPage: true });
